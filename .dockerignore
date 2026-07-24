@@ -1,0 +1,13 @@
+.git
+.venv
+.test-deps
+.pytest_cache
+.web-runtime
+__pycache__
+*.pyc
+*.mp4
+*.mov
+*.avi
+*.pt
+docs
+tests

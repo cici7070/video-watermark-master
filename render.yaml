@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: video-watermark-master
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    numInstances: 1
+    maxShutdownDelaySeconds: 300
+    envVars:
+      - key: WEB_RUNTIME_ROOT
+        value: /tmp/watermark-master
+      - key: MAX_UPLOAD_BYTES
+        value: "209715200"
+      - key: IP_JOB_LIMIT
+        value: "3"
+      - key: JOB_TTL_SECONDS
+        value: "1800"
+      - key: MAX_VIDEO_WIDTH
+        value: "1920"
+      - key: MAX_VIDEO_HEIGHT
+        value: "1080"
+      - key: MAX_VIDEO_SECONDS
+        value: "60"
+      - key: MAX_QUEUE_SIZE
+        value: "5"
